@@ -5,95 +5,156 @@ ob_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> we_care </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-  <!-- font awesome cdn link  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- custom css file link  -->
-  <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/home.css">
+  <title>wecare</title>
 </head>
+
 <body>
-<header class="header">
+  <div class="container">
+    <div class="topbar">
+      <div class="logo">
+        <h2>wecare.</h2>
+      </div>
 
-<a href="#" class="logo"><i class="fas fa-notes-medical">WeCare. </i></a>
-<!-- <i class="fas fa-heartbeat"></i> -->
+      <!-- search bar start -->
+      <div class="search">
+        <input type="text" name="search" placeholder="search here">
+        <label for="search"><i class="fas fa-search"></i></label>
+      </div>
+      <!-- search bar end -->
 
-<nav class="navbar">
-  <a href="/we_care/home.php#home">home</a>
-  <a href="/we_care/home.php#services">services</a>
-  <a href="#footer">contact us</a>
-  <a href="logout.php">Logout</a>
-  <a class="fas fa-users" href="#"> <img src=""> <?php echo "Welcome ". $_SESSION['username']?></a>
-  <?php $email = array_key_exists('username', $_SESSION) ? $_SESSION['username'] : false ?>
+      <i class="fas fa-bell"></i>
+      <div class="user">
+        <?php $email = array_key_exists('username', $_SESSION) ? $_SESSION['username'] : false ?>
+        <?php echo "Welcome ". $_SESSION['username']?>
+      </div>
+    </div>
 
-
-
-</nav>
-</header>
-
-<!-- service section start -->
-
-<section class="services" id="services">
-
-  <h1 class="heading"> our <span>services</span> </h1>
-
-  <div class="box-container">
-
-    <div class="box">
-      <i class="fas fa-notes-medical"></i>
-      <h3>Online Doctor appointment</h3>
-      <p>Consult with our top doctors available for you 24/7.</p>
+    <!-- sidebar start -->
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fas fa-th-large"></i>
+            <div>Home</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-user-md"></i>
+            <div>Diseases Prediction system</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <div>Doctor Appointment</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users"></i>
+            <div>Blood Bank</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-hospital"></i>
+            <div>Buy Medicine</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-procedures"></i>
+            <div>Ambulance</div>
+          </a>
+        </li>
+        <li>
+          <a href="logout.php">
+            <i class="fas fa-cog"></i>
+            <div>Logout</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-question"></i>
+            <div>Help</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- sidebar end -->
+    
+    <div class="main">
+      <div class="cards">
+        <div class="card">
+          <div class="card-content">
+            <div class="number">12170</div>
+            <div class="card-name">Doctors</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-user-md"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">420000</div>
+            <div class="card-name">Patients</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">680</div>
+            <div class="card-name">Ambulance</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-procedures"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">450000</div>
+            <div class="card-name">Medicines</div>
+          </div>
+          <div class="icon-box">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="charts">
+        <div class="chart">
+          <h2><section class="heder-section">
+            <div class="center-div">
+              <h1 class="font-weight-bold">We wish you a healthy life!</h1>
+              <p>Aayiye aoko bimaar bnate h</p>
+              <div class="heder-button">
+              </div>
+            </div>
+          </section></h2>
+          <div>
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+        <div class="chart doughnut-chart">
+          <h2></h2>
+          <div>
+            <canvas id="doughnut"></canvas>
+          </div>
+        </div>
+      </div> -->
       
     </div>
-
-    <div class="box">
-      <i class="fas fa-ambulance"></i>
-      <h3>24/7 Ambulance</h3>
-      <p>Book your ambulance in the case of emergency.</p>
-      
-    </div>
-
-    <div class="box">
-      <i class="fas fa-user-md"></i>
-      <h3>Expert Doctors</h3>
-      <p>We have thousand of expert doctor through whom you can easily connect. </p>
-      
-    </div>
-
-    <div class="box">
-      <i class="fas fa-pills"></i>
-      <h3>Medicines</h3>
-      <p>You can also easily buy the medicines refered by doctors.</p>
-      
-    </div>
-
-    <div class="box">
-      <i class="fas fa-procedures"></i>
-      <h3>Blood Bank facility</h3>
-      <p>All type of blood available in the need of a rush hour.</p>
-       
-    </div>
-
-    <div class="box">
-      <i class="fas fa-heartbeat"></i>
-      <h3>Disease Prediction System</h3>
-      <p>Predict the Disease through your symptoms </p>
-      
-    </div>
-
   </div>
-
-</section> -->
- <!-- ends -->
-
-<?php include "./layout/footer.php" ?>
 </body>
-</head>
-</html>
 
+</html>
