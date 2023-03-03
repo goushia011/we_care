@@ -1,19 +1,20 @@
-<?php session_start();?>
+<?php 
+session_start();
 
-
+?>
 
 <!DOCTYPE html>
 
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/register.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
+   
+   <body background="image/main.jpg">
 
 <?php 
 
@@ -32,7 +33,7 @@ if(isset($_POST['submit'])){
   $pass = password_hash($password, PASSWORD_BCRYPT);
   $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
 
-  $emailquery = "select * from registration where email ='$email' ";
+  $emailquery = "select * from users_registration where email ='$email' ";
   $query = mysqli_query($con, $emailquery);
 
   $emailcount = mysqli_num_rows($query);
@@ -42,11 +43,13 @@ if(isset($_POST['submit'])){
   }else{
     if($password === $cpassword){
 
-      $insertquery =" insert into registration( name,  username, email, mobile, gender, password, cpassword) values('$name','$username','$email','$mobile', '$gender', '$pass', '$cpass')";
+      $insertquery =" insert into registration( name,  username, email, mobile, gender, password,cpassword) values('$name','$username','$email','$mobile', '$gender', '$pass','cpass')";
 
       $iquery = mysqli_query($con, $insertquery);
 
           if($iquery){
+            
+
               ?>
                     <script>
                         alert("insert Successful");
@@ -75,6 +78,7 @@ if(isset($_POST['submit'])){
   <?php
     }
   }
+
 
 
 

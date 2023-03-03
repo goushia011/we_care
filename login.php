@@ -9,7 +9,7 @@ ob_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>complete responsive hospital website design </title>
+  <title> we_care </title>
 
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
       if (isset($_POST['rememberme'])) {
 
         setcookie('emailcookie', $email, time() +60);
-        setcookie('passwordcookie', $password, time() +60);
+        setcookie('passwordcookie', $password);
 
         header('location:home.php');
 
@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-  <?php include "./layout/header.html" ?>
+  <?php include "./layout/header.php" ?>
 
   <section class="book" id="book">
 
@@ -103,8 +103,7 @@ if (isset($_POST['submit'])) {
           value="<?php if (isset($_COOKIE['passwordcookie'])) {
         echo $_COOKIE['passwordcookie'];
       } ?>">
-        <!-- <input type="email" placeholder="your email" class="box">
-      <input type="date" class="box"> -->
+       
         <div class="checkbox-text">
           <div class="checkbox-content">
             <input type="checkbox" id="logCheck">
@@ -124,3 +123,5 @@ if (isset($_POST['submit'])) {
     </div>
 
   </section>
+
+  <?php include "./layout/footer.php" ?>
