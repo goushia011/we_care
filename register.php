@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
   $pass = password_hash($password, PASSWORD_BCRYPT);
   $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
 
-  $emailquery = "select * from users_registration where email ='$email' ";
+  $emailquery = "select * from registration where email ='$email' ";
   $query = mysqli_query($con, $emailquery);
 
   $emailcount = mysqli_num_rows($query);
