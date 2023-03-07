@@ -8,11 +8,12 @@ session_start();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/register.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+
+    <title>Register - We Care</title>
+  </head>
    
    <body background="image/main.jpg">
 
