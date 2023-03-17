@@ -1,3 +1,5 @@
+@import 'variables.css';
+
 * {
   padding: 0;
   margin: 0;
@@ -264,4 +266,39 @@ img {
     width: 40px;
     height: 40px;
   }
+}
+
+.symptoms {
+  padding: 5px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 300px;
+  overflow-y: scroll;
+  justify-content: space-around;
+  gap: 7px;
+}
+
+.symptoms .symptom {
+  position: relative;
+}
+
+.symptoms .symptom .checkbox {
+  position: absolute;
+  display: none;
+}
+
+.symptoms .symptom label {
+  background-color: var(--secondary);
+  color: var(--base-primary);
+  padding: 15px 25px;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.symptoms .symptom .checkbox:checked ~ label {
+  background-color: var(--primary)
 }

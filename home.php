@@ -152,7 +152,16 @@ ob_start();
           </div>
         </div>
       </div> -->
-      
+      <?php $symptoms_str = file_get_contents('data/symptoms.json'); ?>
+      <?php $symptoms = json_decode($symptoms_str); ?>
+      <div class="symptoms">
+        <?php foreach ($symptoms as $symptom_id => $symptom) { ?>
+          <div class="symptom">
+            <input type="checkbox" name="symptoms[]" id="<?php echo $symptom_id ?>" class="checkbox" />
+            <label for="<?php echo $symptom_id ?>"><?php echo $symptom ?></label>
+          </div>
+          <?php } ?>
+      </div>
     </div>
   </div>
 </body>
