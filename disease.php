@@ -12,7 +12,8 @@ ob_start();
 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/home.css">
-  
+  <script src="js/fetch_desease.js"></script>
+
   <title>wecare</title>
 </head>
 
@@ -28,7 +29,7 @@ ob_start();
           <?php foreach ($symptoms as $key => $value) { ?>
             <div>
               <label for="<?php echo $key ?>">
-                <input type="checkbox" name="symptoms[]" id="<?php echo $key ?>">
+                <input type="checkbox" name="symptoms[]" value="<?php echo $key ?>">
                 <?php echo $value ?>
               </label>
             </div>
@@ -36,9 +37,9 @@ ob_start();
         </div>
       </div>
       <div class="content">
-        <input type="submit">
-        <input type="text">
+        <input type="submit" id="btnSubmit" value="Submit">
       </div>
+      <div id="prediction" class="txt"></div>
     </section>
   </div>
 </body>
