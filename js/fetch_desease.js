@@ -1,4 +1,4 @@
-var baseUrl = 'https://07d7-34-83-25-180.ngrok.io/disease/'
+var baseUrl = 'http://127.0.0.1:8000/disease/'
 
 document.addEventListener("DOMContentLoaded", function (event) {
     var predictionContainer = document.getElementById('prediction');

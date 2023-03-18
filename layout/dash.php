@@ -28,7 +28,7 @@
         </a>
       </li>
       <li>
-        <a href="/we_care/disease.php#disease">
+        <a href="/we_care/disease.php">
           <i class="fas fa-user-md"></i>
           <div>Diseases Prediction system</div>
         </a>
