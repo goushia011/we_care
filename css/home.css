@@ -159,6 +159,13 @@ img {
   color: #299b63;
 }
 
+/* submit */
+.submit {
+  position: absolute;
+  top: 60px;
+  font-size: 30px;
+}
+
 
 /* charts */
 
