@@ -12,6 +12,7 @@ ob_start();
 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/disease.css">
   <script src="js/fetch_desease.js"></script>
 
   <title>wecare</title>
@@ -24,22 +25,22 @@ ob_start();
     <section>
       <?php $symptoms_str = file_get_contents("data/symptoms.json") ?>
       <?php $symptoms = json_decode($symptoms_str) ?>
-      <div style="display: flex; justify-content: center;">
-        <div class="symptoms-container">
+      <div class="disease-prediction">
+        <section class="symptoms-container">
           <?php foreach ($symptoms as $key => $value) { ?>
-            <div>
+            <div class="symptom">
+              <input type="checkbox" class="checkbox" name="symptoms[]" value="<?php echo $key ?>" id="<?php echo $key ?>">
               <label for="<?php echo $key ?>">
-                <input type="checkbox" name="symptoms[]" value="<?php echo $key ?>">
                 <?php echo $value ?>
               </label>
             </div>
           <?php } ?>
-        </div>
+        </section>
+        <section class="actions">
+          <input type="submit" class="submit-disease" id="btnSubmit" value="Submit">
+          <div id="prediction" class="txt"></div>
+        </section>
       </div>
-      <div class="content">
-        <input type="submit" id="btnSubmit" value="Submit">
-      </div>
-      <div id="prediction" class="txt"></div>
     </section>
   </div>
 </body>
